@@ -8,6 +8,7 @@
 -Felipe Mitsuo Takahashi Stephano RM570692
 
 -Laura Godoy Callegari RM569181
+
 -Letícia Araújo Espindola RM569308
 
 -Mariana Dreset Carbollan RM569207
@@ -15,7 +16,7 @@
 -Milena de Aguiar Lopes Cardoso RM570599
 
 
-🎥 **Vídeo técnico:** _link do YouTube (não listado)_
+**Vídeo técnico:** _link do YouTube (não listado)_
 
 ---
 
@@ -34,17 +35,15 @@ Sistema em Python que simula a operação de uma estação de recarga de veícul
 
 ## 2. Arquitetura da solução
 
-```mermaid
-flowchart LR
-    SOL[Painéis solares<br/>10 kW] --> GER[Gerenciador de energia<br/>solar > bateria > rede]
-    BAT[(Bateria<br/>20 kWh)] <--> GER
-    REDE[Rede elétrica<br/>R$ 0,85/kWh] --> GER
-    GER --> E1[Ponto Rápido<br/>50 kW]
-    GER --> E2[Ponto Semirrápido<br/>22 kW]
-    GER --> E3[Ponto Padrão<br/>7,4 kW]
-    GER --> HIST[Histórico de sessões]
-    HIST --> REL[Relatório<br/>custo, economia, CO₂, gráfico]
-```
+![Arquitetura do sistema](docs/01_arquitetura.png)
+
+*Figura 1 – Arquitetura final: painéis solares, bateria, rede elétrica, gerenciador de energia e eletropostos.*
+
+### Fluxograma da automação
+
+![Fluxograma da automação](docs/02_fluxograma_automacao.png)
+
+*Figura 2 – Lógica de decisão de cada recarga: solar → bateria → rede.*
 
 ### Componentes do código
 
@@ -105,13 +104,25 @@ A solução reproduz, em simulação, a lógica de um sistema **fotovoltaico hí
 
 ## 5. Resultados
 
-Cole aqui a saída real da **opção 1** do menu (simulação do dia) e prints do terminal.
+### Simulação de um dia inteiro (opção 1 do menu)
 
-```
-<cole aqui a saída do programa>
-```
+![Simulação do dia no terminal](docs/03_terminal_simulacao_dia.png)
 
-📷 _Inserir prints: simulação do dia, relatório, curva solar._
+*Figura 3 – Saída do terminal com as 9 recargas simuladas e o relatório geral.*
+
+![Origem da energia por recarga](docs/04_origem_energia_por_recarga.png)
+
+*Figura 4 – Origem da energia (solar, bateria e rede) em cada recarga.*
+
+### Curva de geração solar (opção 5 do menu)
+
+![Curva solar no terminal](docs/05_terminal_curva_solar.png)
+
+*Figura 5 – Gráfico em texto da geração solar por horário, no terminal.*
+
+![Curva de geração solar](docs/06_curva_geracao_solar.png)
+
+*Figura 6 – Curva de geração solar ao longo do dia (pico de 10 kW às 12h).*
 
 ### Resultados quantitativos (preencher com a saída acima)
 
@@ -148,7 +159,7 @@ Cole aqui a saída real da **opção 1** do menu (simulação do dia) e prints d
 - Cada sessão é simulada isoladamente; não há recargas simultâneas disputando a mesma energia.
 - Excedente solar acima da capacidade da bateria é descartado (não há injeção na rede).
 
-### ⚠️ Nota sobre o fator de emissão
+### Nota sobre o fator de emissão
 O valor de `FATOR_EMISSAO_REDE` no código (0,04 kg CO₂/kWh) é **provisório**. Antes de entregar, confirme o valor na fonte oficial (por exemplo, o fator médio do Sistema Interligado Nacional publicado pelo MCTI), atualize o código e cite a fonte e o ano aqui. Como a matriz brasileira é predominantemente renovável, o CO₂ evitado será pequeno em comparação com outros países, e isso deve ser dito com honestidade na análise.
 
 ### Inovação
@@ -172,9 +183,14 @@ Dados reais de irradiação/geração (ex.: via plataforma de monitoramento do i
 ## 8. Estrutura do repositório
 
 ```
-├── sprint04_sers.py     # código-fonte
+├── eletropostos.py
+├── gerar_imagens.py                    
 ├── README.md
-├── docs/
-│   ├── diagrama.png    # diagrama da arquitetura
-│   └── prints/         # capturas de tela da execução
+└── docs/
+    ├── 01_arquitetura.png
+    ├── 02_fluxograma_automacao.png
+    ├── 03_terminal_simulacao_dia.png
+    ├── 04_origem_energia_por_recarga.png
+    ├── 05_terminal_curva_solar.png
+    └── 06_curva_geracao_solar.png
 ```
