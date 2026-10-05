@@ -1,14 +1,19 @@
-# ⚡ Gestão Sustentável de Eletropostos
+# Gestão Sustentável de Eletropostos
 
 > Sprint 4 – Entrega Final · Desafio GoodWe
 
-## 👥 Equipe
+## Equipe
+-Felipe Perdigão Macedo RM570990
 
-| Nome | RM |
-|------|----|
-| _Nome do integrante 1_ | _RM_ |
-| _Nome do integrante 2_ | _RM_ |
-| _Nome do integrante 3_ | _RM_ |
+-Felipe Mitsuo Takahashi Stephano RM570692
+
+-Laura Godoy Callegari RM569181
+-Letícia Araújo Espindola RM569308
+
+-Mariana Dreset Carbollan RM569207
+
+-Milena de Aguiar Lopes Cardoso RM570599
+
 
 🎥 **Vídeo técnico:** _link do YouTube (não listado)_
 
