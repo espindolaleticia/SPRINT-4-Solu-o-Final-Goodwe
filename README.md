@@ -16,7 +16,7 @@
 -Milena de Aguiar Lopes Cardoso RM570599
 
 
-**Vídeo técnico:** _link do YouTube (não listado)_
+**Vídeo técnico:** https://youtu.be/7DGaJAtamSA?is=rQAVHAjz1wuRf66C
 
 ---
 
